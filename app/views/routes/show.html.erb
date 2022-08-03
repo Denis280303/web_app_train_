@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Назва:</strong>
+  <%= @route.title %>
+</p>
+
+<%= link_to 'Змінити', edit_route_path(@route) %> |
+<%= link_to 'Повернутись', routes_path %>
