@@ -5,5 +5,28 @@
   <%= @route.title %>
 </p>
 
+<% if @route.trains.empty? %>
+  <p>Потягів на маршрут немає!</p>
+<% else %>
+  <p>Список потягів на маршруті:</p>
+  <ul>
+  <% @route.trains.each do |train| %>
+    <li><%= train.number %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<% if @route.railway_stations.empty? %>
+  <p>Станцій на маршруті немає!</p>
+<% else %>
+  <p>Список станцій на маршруті:</p>
+  <ul>
+  <% @route.railway_stations.each do |station| %>
+    <li><%= station.title %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+
 <%= link_to 'Змінити', edit_route_path(@route) %> |
 <%= link_to 'Повернутись', routes_path %>
