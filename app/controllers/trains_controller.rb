@@ -21,8 +21,8 @@ class TrainsController < ApplicationController
 
   # POST /trains or /trains.json
   def create
+    binding.pry
     @train = Train.new(train_params)
-
     respond_to do |format|
       if @train.save
         format.html { redirect_to train_url(@train), notice: "Train was successfully created." }
@@ -65,6 +65,6 @@ class TrainsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def train_params
-      params.require(:train).permit(:number, :route_id)
+      params.require(:train).permit(:number, :current_station_id, :route_id)
     end
 end
