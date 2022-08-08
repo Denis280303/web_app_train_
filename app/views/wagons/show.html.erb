@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Тип вагона:</strong>
+  <%= @wagon.type_wag %>
+</p>
+
+<% if @wagon.current_train.nil? %>
+  <p>Потяг не призначений!</p>
+<% else %>
+  <p>Потяг:<%= @wagon.current_train.number %></p>
+<% end %>
+
+<%= link_to 'Змінити', edit_wagon_path(@wagon) %> |
+<%= link_to 'Назад', wagons_path %>

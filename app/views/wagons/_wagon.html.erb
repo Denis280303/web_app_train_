@@ -1,0 +1,7 @@
+<tr>
+  <td><%= wagon.type_wag %></td>
+  <td><%= wagon.current_train.number %></td>
+  <td><%= link_to 'Показати', wagon %></td>
+  <td><%= link_to 'Змінити', edit_wagon_path(wagon) %></td>
+  <td><%= link_to 'Видалити', wagon, method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
+</tr>

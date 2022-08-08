@@ -1,43 +1,45 @@
-require "application_system_test_case"
+# frozen_string_literal: true
+
+require 'application_system_test_case'
 
 class TrainsTest < ApplicationSystemTestCase
   setup do
     @train = trains(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit trains_url
-    assert_selector "h1", text: "Trains"
+    assert_selector 'h1', text: 'Trains'
   end
 
-  test "creating a Train" do
+  test 'creating a Train' do
     visit trains_url
-    click_on "New Train"
+    click_on 'New Train'
 
-    fill_in "Number", with: @train.number
-    click_on "Create Train"
+    fill_in 'Number', with: @train.number
+    click_on 'Create Train'
 
-    assert_text "Train was successfully created"
-    click_on "Back"
+    assert_text 'Train was successfully created'
+    click_on 'Back'
   end
 
-  test "updating a Train" do
+  test 'updating a Train' do
     visit trains_url
-    click_on "Edit", match: :first
+    click_on 'Edit', match: :first
 
-    fill_in "Number", with: @train.number
-    click_on "Update Train"
+    fill_in 'Number', with: @train.number
+    click_on 'Update Train'
 
-    assert_text "Train was successfully updated"
-    click_on "Back"
+    assert_text 'Train was successfully updated'
+    click_on 'Back'
   end
 
-  test "destroying a Train" do
+  test 'destroying a Train' do
     visit trains_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on 'Destroy', match: :first
     end
 
-    assert_text "Train was successfully destroyed"
+    assert_text 'Train was successfully destroyed'
   end
 end

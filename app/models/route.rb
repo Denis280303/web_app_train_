@@ -1,3 +1,16 @@
+# frozen_string_literal: true
+
+# == Schema Information
+#
+# Table name: routes
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Route
 class Route < ActiveRecord::Base
   validates :title, presence: true
 
