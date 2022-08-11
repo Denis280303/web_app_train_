@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Вагони</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Тип</th>
+      <th>Потяг</th>
+    </tr>
+      
+  </thead>
+
+  <tbody>
+    <%= render @wagons %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Новий вагон', new_wagon_path %>
+<%= link_to 'Назад', root_path %>

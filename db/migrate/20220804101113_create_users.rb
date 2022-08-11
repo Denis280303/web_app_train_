@@ -1,8 +1,8 @@
+# frozen_string_literal: true
+
+# CreateUsers
 class CreateUsers < ActiveRecord::Migration[6.1]
   def change
-    create_table :users do |t|
-
-      t.timestamps
-    end
+    create_table :users, &:timestamps
   end
 end

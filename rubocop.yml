@@ -1,0 +1,136 @@
+# This is the configuration used to check the rubocop source code.
+# See https://github.com/bbatsov/rubocop/blob/master/config/default.yml for options
+require:
+  - rubocop-rails
+  - rubocop-performance
+AllCops:
+  TargetRubyVersion: 2.7.5
+  DisplayCopNames: true
+  Include:
+    - 'app/**/*.rb'
+    - 'config/**/*.rb'
+    - 'db/seeds.rb'
+    - 'lib/**/*.rb'
+    - 'lib/**/*.rake'
+    - 'spec/**/*.rb'
+    - 'config.ru'
+    - 'Gemfile'
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'node_modules/**/*'
+    - 'db/schema.rb'
+    - 'bin/**/*'
+    - 'db/migrate/**/*.rb'
+  NewCops: enable
+Layout/EmptyLineAfterGuardClause:
+  Enabled: true
+Layout/DotPosition:
+  EnforcedStyle: trailing
+  Enabled: false
+Layout/FirstArrayElementLineBreak:
+  Enabled: true
+Layout/MultilineArrayLineBreaks:
+  Enabled: true
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+Layout/FirstHashElementLineBreak:
+  Enabled: true
+Layout/MultilineHashKeyLineBreaks:
+  Enabled: true
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+Lint/UnusedBlockArgument:
+  Enabled: true
+Lint/AmbiguousOperator:
+  Enabled: false
+Lint/MissingSuper:
+  Enabled: false
+Metrics/AbcSize:
+  Max: 35
+Layout/LineLength:
+  Max: 200
+Metrics/ClassLength:
+  Max: 150
+Metrics/MethodLength:
+  Max: 40
+Metrics/ModuleLength:
+  Max: 120
+  Exclude:
+    - 'spec/**/*_spec.rb'
+Naming/PredicateName:
+  ForbiddenPrefixes:
+    - is_
+  Exclude:
+    - 'spec/**/*'
+Rails:
+  Enabled: true
+Rails/BulkChangeTable:
+    Enabled: false
+Rails/HasAndBelongsToMany:
+  Enabled: false
+Rails/LexicallyScopedActionFilter:
+  Exclude:
+    - 'app/controllers/concerns/**/*.rb'
+Rails/Output:
+  Enabled: false
+Rails/OutputSafety:
+  Enabled: false
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+Rails/SkipsModelValidations:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+    - 'spec/factories/*.rb'
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+Style/Documentation:
+  Enabled: false
+Style/FormatStringToken:
+  EnforcedStyle: template
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/Lambda:
+  EnforcedStyle: literal
+Style/LambdaCall:
+  EnforcedStyle: call
+  Exclude:
+    - 'app/**/*.jbuilder'
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+Style/SymbolArray:
+  MinSize: 3
+Style/WordArray:
+  MinSize: 3
+Style/AndOr:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/RaiseArgs:
+  Enabled: false
+Metrics/BlockLength:
+  Exclude:
+    - 'app/views/**/*'
+    - 'config/**/*.rb'
+    - 'db/**/*.rb'
+    - 'lib/**/*.rake'
+    - 'spec/**/*'
+    - 'Gemfile'
+Bundler/OrderedGems:
+  Enabled: false
+Rails/FilePath:
+  EnforcedStyle: arguments
+Rails/EnvironmentVariableAccess:
+  AllowReads: true
+Rails/RakeEnvironment:
+  Enabled: false
+Naming/FileName:
+  Enabled: false

@@ -1,17 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Number:</strong>
+  <strong>Номер:</strong>
   <%= @train.number %>
 </p>
 
 <% if @train.route.nil? %>
   <p>Маршрут не призначений!</p>
 <% else %>
-  <p>Маршрут потяга:</p>
-  <%= @train.route.title %>
+  <p><strong>Маршрут потяга: </strong><%= @train.route.title %></p>
   <% end %>
 
+<% if @train.wagons.count == 0 %>
+  <p>У потяга немає вагонів!</p>
+<% else %>
+<strong>Вагони:</strong>
+  <% @train.wagons.each do |wagon| %>
+    <p><tr>
+      <td><strong><%= wagon.id %>.</strong></td>
+      <td><%= wagon.type_wag %></td>
+      <td>(<%= wagon.high_seats %> верхніх</td>
+      <td><%= wagon.low_seats %> нижніх)</td>
+    </tr></p>
+  <% end %>
+<% end %>
 
-<%= link_to 'Edit', edit_train_path(@train) %> |
-<%= link_to 'Back', trains_path %>
+<%= link_to 'Змінити', edit_train_path(@train) %> |
+<%= link_to 'Назад', trains_path %>
