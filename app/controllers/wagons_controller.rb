@@ -61,6 +61,7 @@ class WagonsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def wagon_params
-    params.require(:wagon).permit(:current_train_id, :type_wag, :high_seats, :low_seats)
+    params.require(:wagon).
+    permit(:current_train_id, :type, :high_seats, :low_seats, :side_low_seats, :side_high_seats, :econom_seats)
   end
 end

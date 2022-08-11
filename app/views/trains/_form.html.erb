@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+      <%= form.label :order_wagon, 'З голови потяга' %>
+      <%= form.select :order_wagon, [true, false] %>
+  </div>
+
+  <div class="field">
     <%= form.label :number %>
     <%= form.text_field :number %>
   </div>

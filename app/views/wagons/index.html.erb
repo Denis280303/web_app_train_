@@ -4,15 +4,17 @@
 
 <table>
   <thead>
-    <tr>
-      <th>Тип</th>
-      <th>Потяг</th>
-    </tr>
-      
   </thead>
 
   <tbody>
-    <%= render @wagons %>
+    <% @wagons.each do |wagon|%>
+    <tr>
+      <td>Тип вагона: <%= wagon.type %>, номер вагона: <%= wagon.number_wag%></td>
+      <td><%= link_to 'Показати', wagon_path(wagon) %></td>
+      <td><%= link_to 'Видалити', wagon_path(wagon), method: :delete, data: { confirm: 'Ви впевнені?' }%></td>
+    </tr>
+    <%end%>
+    
   </tbody>
 </table>
 

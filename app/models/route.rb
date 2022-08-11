@@ -17,4 +17,6 @@ class Route < ActiveRecord::Base
   has_many :trains
   has_many :railway_stations_routes
   has_many :railway_stations, through: :railway_stations_routes
+
+  scope :ordered_stations, -> { joins(:railway_stations_routes).order('railway_stations_routes.station_index')}
 end
