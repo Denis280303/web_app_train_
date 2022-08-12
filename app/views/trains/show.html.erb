@@ -25,11 +25,12 @@
 
   <% @train.wagons.each do |wagon| %>
     <p><tr>
-      <td><strong><%= link_to "Номер вагона: #{wagon.number_wag}", wagon_path(wagon)%></strong></td>
-      <td><%= wagon.type_wag %></td>
+      <td><strong><%= link_to "Номер вагона: #{wagon.number_wag}", wagon_path(wagon) %></strong></td>
+      <td><strong><%= wagon.type %></strong></td>
     </tr></p>
   <% end %>
 <% end %>
 
+<%= link_to 'Додати вагон', new_train_wagon_path(@train) %> |
 <%= link_to 'Змінити', edit_train_path(@train) %> |
 <%= link_to 'Назад', trains_path %>

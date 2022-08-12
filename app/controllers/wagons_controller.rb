@@ -3,6 +3,7 @@
 # WagonsController
 class WagonsController < ApplicationController
   before_action :set_wagon, only: %i[show edit update destroy]
+  before_action :set_train, only: %i[new create]
 
   # GET /wagons or /wagons.json
   def index
@@ -22,10 +23,10 @@ class WagonsController < ApplicationController
 
   # POST /wagons or /wagons.json
   def create
-    @wagon = Wagon.new(wagon_params)
+    @wagon = @current_train.wagons.new(wagon_params)
     respond_to do |format|
       if @wagon.save
-        format.html { redirect_to wagon_url(@wagon), notice: 'Wagon was successfully created.' }
+        format.html { redirect_to @current_train, notice: 'Wagon was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -48,7 +49,7 @@ class WagonsController < ApplicationController
     @wagon.destroy
 
     respond_to do |format|
-      format.html { redirect_to wagons_url, notice: 'Wagon was successfully destroyed.' }
+      format.html { redirect_to @wagon.current_train, notice: 'Wagon was successfully destroyed.' }
     end
   end
 
@@ -59,9 +60,13 @@ class WagonsController < ApplicationController
     @wagon = Wagon.find(params[:id])
   end
 
+  def set_train
+    @current_train = Train.find(params[:train_id])
+  end
+
   # Only allow a list of trusted parameters through.
   def wagon_params
     params.require(:wagon).
-    permit(:current_train_id, :type, :high_seats, :low_seats, :side_low_seats, :side_high_seats, :econom_seats)
+    permit(:number_wag, :type, :high_seats, :low_seats, :side_low_seats, :side_high_seats, :econom_seats)
   end
 end

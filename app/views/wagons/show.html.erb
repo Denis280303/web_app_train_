@@ -10,12 +10,6 @@
   <%= @wagon.number_wag %>
 </p>
 
-<% if @wagon.current_train.nil? %>
-  <p>Потяг не призначений!</p>
-<% else %>
-  <p>Потяг:<%= @wagon.current_train.number %></p>
-<% end %>
-
 <% if @wagon.high_seats %>
   <p>Верхніх місць:<%= @wagon.high_seats %></p>
 <% end %>
@@ -36,5 +30,6 @@
   <p>Сидячих місць:<%= @wagon.econom_seats %></p>
 <% end %>
 
-<%= link_to 'Змінити', edit_wagon_path(@wagon) %> |
-<%= link_to 'Назад', trains_path %>
+<%= link_to 'Змінити', edit_wagon_path(@wagon) %> 
+<%= link_to 'Видалити', wagon_url, method: :delete, data: { confirm: 'Ви впевнені?' } %> 
+<%= link_to 'Назад', @wagon.current_train %> 
