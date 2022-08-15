@@ -17,13 +17,11 @@
 <strong>Вагони:</strong>
   <% if @train.order_wagon %>
     <p><strong>Нумерація з голови</strong></p>
-    <% @train.wagons.order('number_wag ASC')%>
   <% else %>
     <p><strong>Нумерація з хвоста</strong></p>
-    <% @train.wagons.order('number_wag DESC') %>
   <% end %>
 
-  <% @train.wagons.each do |wagon| %>
+  <% @train.wagons.order_all_wagons(@train).each do |wagon| %>
     <p><tr>
       <td><strong><%= link_to "Номер вагона: #{wagon.number_wag}", wagon_path(wagon) %></strong></td>
       <td><strong><%= wagon.type %></strong></td>

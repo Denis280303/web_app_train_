@@ -29,17 +29,17 @@ class RailwayStation < ActiveRecord::Base
     station_route.update(position: position) if station_route
   end
 
-  def update_time(route, arival_time, departure_time)
+  def update_time(route, arrival_time, departure_time)
     station_route = station_route(route)
-    station_route.update(arival_time: arival_time, departure_time: departure_time) if station_route
+    station_route.update(arrival_time: arrival_time, departure_time: departure_time) if station_route
   end
 
   def position_in(route)
     station_route(route).try(:position)
   end
 
-  def arival_time(route)
-    station_route(route).try(:arival_time)
+  def arrival_time(route)
+    station_route(route).try(:arrival_time)
   end
 
   def departure_time(route)

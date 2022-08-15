@@ -23,6 +23,8 @@ class Wagon < ActiveRecord::Base
 
   before_validation :add_number_wag
 
+  scope :order_all_wagons,-> (train) { order("number_wag #{train.order_wagon ? 'ASC' : 'DESC' }") }
+
   protected
 
   def add_number_wag

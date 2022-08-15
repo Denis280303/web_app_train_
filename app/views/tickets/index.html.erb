@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Білети</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Білет id</th>
+    <th>Користувач</th>
+    <th>Ім'я користувача</th>
+    <th>Прізвище користувача</th>
+    <th>По-батькові користувача</th>
+    <th>Паспорт</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr>
+    <td><%= ticket.id %></td>
+    <td><%= ticket.user.id %></td>
+    <td><%= ticket.user_first_name %></td>
+    <td><%= ticket.user_last_name %></td>
+    <td><%= ticket.user_fathers_name %></td>
+    <td><%= ticket.user_passport %></td>
+  </tr> 
+  </tbody>
+
+</table>
+
+<br>
+
+<%= link_to 'Шукати далі', root_path %> 

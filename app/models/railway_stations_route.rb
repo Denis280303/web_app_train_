@@ -9,8 +9,8 @@
 #  route_id           :integer
 #  station_index      :integer
 #  position           :integer
-#  departure_time     :datetime
-#  arival_time        :datetime
+#  departure_time     :date
+#  arrival_time       :date
 #
 
 # RailwayStationsRoute
