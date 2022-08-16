@@ -18,15 +18,6 @@
     <%= f.hidden_field :end_station, value: @end_station.id %>
   </div>
 
-  <div class="field">
-    <%= f.label :base_station, 'Початкова станція:' %><br>
-    <%= f.text_field :base_station, value: @start_station.title, disabled: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :last_station, 'Кінцева станція:' %><br>
-    <%= f.text_field :last_station, value: @end_station.title, disabled: true %>
-  </div>
 
   <div class="field">
     <%= f.label :user_first_name, "Ім'я:" %><br>

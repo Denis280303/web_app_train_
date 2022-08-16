@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     post '/', to: 'searches#search'
   end
 
-  root 'searches#show'
+  root 'wellcome#index'
   get 'wellcome/index'
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
