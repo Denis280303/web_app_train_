@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   end
 
 
-  resources :search, only: [:show, :new, :edit] do 
-    post '/', to: 'searches#search'
+  resources :search, only: [:index, :show, :new, :edit] do 
+    post '/', to: 'search#search'
   end
 
   root 'wellcome#index'

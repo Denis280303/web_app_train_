@@ -7,12 +7,13 @@ class TicketsController < ApplicationController
 
   def new
     @ticket = Ticket.new
-    @start_station = RailwayStation.find(params[:start_station])
-    @end_station = RailwayStation.find(params[:end_station])
+    @start_station = RailwayStation.find(params[:start_station_id])
+    @end_station = RailwayStation.find(params[:end_station_id])
   end
 
   def create
-    @ticket = @train.tickets.build(ticket_params)
+    binding.pry
+    @ticket = @train.tickets.new(ticket_params)
     @ticket.user = User.first
     if @ticket.save
       redirect_to tickets_path, notice: 'Білет створено.'
@@ -24,7 +25,7 @@ class TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.require(:ticket).permit(:train_id, :user_first_name, :user_last_name, :user_fathers_name, :user_passport, :start_station, :end_station)
+    params.require(:ticket).permit(:train_id, :user_first_name, :user_last_name, :user_fathers_name, :user_passport, :start_station_id, :end_station_id)
   end
 
   def find_train

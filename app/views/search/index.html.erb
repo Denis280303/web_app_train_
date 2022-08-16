@@ -4,11 +4,11 @@
   <%= form_tag search_path(@stations) do %>
       <div>
         <p>Початкова станція</p>
-        <%= select_tag :start_station, options_from_collection_for_select(@stations, :id, :title) %>
+        <%= select_tag :start_station_id, options_from_collection_for_select(@stations, :id, :title) %>
       </div>
       <div>
         <p>Кінцева станція</p>
-        <%= select_tag :end_station, options_from_collection_for_select(@stations, :id, :title) %>
+        <%= select_tag :end_station_id, options_from_collection_for_select(@stations, :id, :title) %>
       </div>
       <div>
         <p><%= submit_tag "Search" %></p>
