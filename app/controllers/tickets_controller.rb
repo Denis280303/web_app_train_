@@ -13,7 +13,6 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = @train.tickets.new(ticket_params)
-    @ticket.user = User.first
     if @ticket.save
       redirect_to tickets_path, notice: 'Білет створено.'
     else
