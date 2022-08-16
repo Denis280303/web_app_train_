@@ -12,8 +12,8 @@
 #  user_last_name    :text
 #  user_fathers_name :text
 #  user_passport     :text
-#  base_station      :text
-#  last_station      :string
+#  start_station_id  :integer
+#  end_station_id    :integer
 #
 require 'test_helper'
 

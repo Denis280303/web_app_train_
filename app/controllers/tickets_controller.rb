@@ -12,7 +12,6 @@ class TicketsController < ApplicationController
   end
 
   def create
-    binding.pry
     @ticket = @train.tickets.new(ticket_params)
     @ticket.user = User.first
     if @ticket.save
