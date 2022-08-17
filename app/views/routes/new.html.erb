@@ -18,6 +18,11 @@
     <%= form.text_field :title %>
   </div>
 
+  <div class="field">
+    <%= form.label :railway_station_ids, 'Станції' %>
+    <%= form.collection_select :railway_station_ids, RailwayStation.all, :id, :title, {}, { multiple: true } %>
+  </div>
+
   <div class="actions">
     <%= form.submit 'Створити' %>
   </div>

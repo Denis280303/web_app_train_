@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Білети</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th width="60px">Білет id</th>
+    <th width="90px">Користувач id</th>
+    <th width="90px">Ім'я користувача</th>
+    <th width="90px">Прізвище користувача</th>
+    <th width="90px">По-батькові користувача</th>
+    <th width="50px">Паспорт</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @tickets.each do |ticket|%>
+  <tr>
+    <td><%= ticket.id %></td>
+    <td><%= ticket.user.id %></td>
+    <td><%= ticket.user_first_name %></td>
+    <td><%= ticket.user_last_name %></td>
+    <td><%= ticket.user_fathers_name %></td>
+    <td><%= ticket.user_passport %></td>
+  </tr> 
+  <% end %>
+  </tbody>
+
+</table>
+
+<br>
+
+<%= link_to 'Шукати далі', search_index_path %> 
+<%= link_to 'На головну сторінку', root_path %> 

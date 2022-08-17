@@ -2,7 +2,7 @@
 
 # RailwayStationsController
 class RailwayStationsController < ApplicationController
-  before_action :set_railway_station, only: %i[show edit update destroy]
+  before_action :set_railway_station, only: %i[show edit update destroy update_position update_time]
 
   # GET /railway_stations or /railway_stations.json
   def index
@@ -46,6 +46,18 @@ class RailwayStationsController < ApplicationController
         format.json { render json: @railway_station.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def update_position
+    @route = Route.find(params[:route_id])
+    @railway_station.update_position(@route, params[:position])
+    redirect_to @route
+  end
+
+  def update_time
+    @route = Route.find(params[:route_id])
+    @railway_station.update_time(@route, params[:arrival_time], params[:departure_time])
+    redirect_to @route
   end
 
   # DELETE /railway_stations/1 or /railway_stations/1.json

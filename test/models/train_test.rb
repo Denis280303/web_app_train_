@@ -10,6 +10,7 @@
 #  updated_at         :datetime         not null
 #  route_id           :integer
 #  current_station_id :integer
+#  order_wagon        :boolean
 #
 require 'test_helper'
 

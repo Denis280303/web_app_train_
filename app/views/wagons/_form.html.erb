@@ -1,4 +1,4 @@
-<%= form_with(model: wagon) do |form| %>
+<%= form_for([@current_train, @wagon.becomes(Wagon)]) do |form| %>
   <% if wagon.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(wagon.errors.count, "error") %> prohibited this wagon from being saved:</h2>
@@ -12,13 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :current_train, 'Потяг' %>
-    <%= form.collection_select :current_train_id, Train.all, :id, :number %>
-  </div>
-
-  <div class="field">
-    <%= form.label :type_wag, 'Тип (купе / плацкарт)' %>
-    <%= form.text_field :type_wag %>
+      <%= form.label :type %><br>
+      <%= form.select :type, Wagon::TYPES, selected: @wagon.type || 'EconomWagon' %>
   </div>
 
   <div class="field">
@@ -29,6 +24,21 @@
   <div class="field">
     <%= form.label :low_seats %>
     <%= form.text_field :low_seats %>
+  </div>
+
+  <div class="field">
+    <%= form.label :side_low_seats %>
+    <%= form.text_field :side_low_seats %>
+  </div>
+
+  <div class="field">
+    <%= form.label :side_high_seats %>
+    <%= form.text_field :side_high_seats %>
+  </div>
+
+  <div class="field">
+    <%= form.label :econom_seats %>
+    <%= form.text_field :econom_seats %>
   </div>
 
   <div class="actions">

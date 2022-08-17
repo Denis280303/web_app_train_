@@ -15,15 +15,20 @@
   <p>У потяга немає вагонів!</p>
 <% else %>
 <strong>Вагони:</strong>
-  <% @train.wagons.each do |wagon| %>
+  <% if @train.order_wagon %>
+    <p><strong>Нумерація з голови</strong></p>
+  <% else %>
+    <p><strong>Нумерація з хвоста</strong></p>
+  <% end %>
+
+  <% @train.wagons.order_all_wagons(@train).each do |wagon| %>
     <p><tr>
-      <td><strong><%= wagon.id %>.</strong></td>
-      <td><%= wagon.type_wag %></td>
-      <td>(<%= wagon.high_seats %> верхніх</td>
-      <td><%= wagon.low_seats %> нижніх)</td>
+      <td><strong><%= link_to "Номер вагона: #{wagon.number_wag}", wagon_path(wagon) %></strong></td>
+      <td><strong><%= wagon.type %></strong></td>
     </tr></p>
   <% end %>
 <% end %>
 
+<%= link_to 'Додати вагон', new_train_wagon_path(@train) %> |
 <%= link_to 'Змінити', edit_train_path(@train) %> |
 <%= link_to 'Назад', trains_path %>

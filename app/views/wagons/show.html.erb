@@ -2,14 +2,34 @@
 
 <p>
   <strong>Тип вагона:</strong>
-  <%= @wagon.type_wag %>
+  <%= @wagon.type %>
 </p>
 
-<% if @wagon.current_train.nil? %>
-  <p>Потяг не призначений!</p>
-<% else %>
-  <p>Потяг:<%= @wagon.current_train.number %></p>
+<p>
+  <strong>Номер вагона:</strong>
+  <%= @wagon.number_wag %>
+</p>
+
+<% if @wagon.high_seats %>
+  <p>Верхніх місць:<%= @wagon.high_seats %></p>
 <% end %>
 
-<%= link_to 'Змінити', edit_wagon_path(@wagon) %> |
-<%= link_to 'Назад', wagons_path %>
+<% if @wagon.low_seats %>
+  <p>Нижніх місць:<%= @wagon.low_seats %></p>
+<% end %>
+
+<% if @wagon.high_seats %>
+  <p>Верхніх бокових місць:<%= @wagon.side_high_seats %></p>
+<% end %>
+
+<% if @wagon.low_seats %>
+  <p>Нижніх бокових місць:<%= @wagon.side_low_seats %></p>
+<% end %>
+
+<% if @wagon.econom_seats %>
+  <p>Сидячих місць:<%= @wagon.econom_seats %></p>
+<% end %>
+
+<%= link_to 'Змінити', edit_wagon_path(@wagon) %> 
+<%= link_to 'Видалити', wagon_url, method: :delete, data: { confirm: 'Ви впевнені?' } %> 
+<%= link_to 'Назад', @wagon.current_train %> 
