@@ -13,10 +13,12 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = @train.tickets.new(ticket_params)
+    @ticket.route_id = @train.route_id
+    @ticket.user_id = 1
     if @ticket.save
       redirect_to tickets_path, notice: 'Білет створено.'
     else
-      redirect_to new_train_ticket_path(@train)
+      redirect_to search_index_path
     end
   end
 
