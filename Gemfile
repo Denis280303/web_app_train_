@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'devise'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -48,6 +49,7 @@ group :development do
   gem 'rubocop-performance', '~> 1.14'
   gem 'rubocop-rails', '~> 2.15'
   gem 'spring'
+  gem 'letter_opener'
 end
 
 group :test do

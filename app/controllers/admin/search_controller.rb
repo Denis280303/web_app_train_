@@ -1,5 +1,4 @@
-class SearchController < ApplicationController
-  before_action :authenticate_user!
+class Admin::SearchController < Admin::BaseController
   
   def index
   	@stations = RailwayStation.all

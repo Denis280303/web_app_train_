@@ -1,8 +1,9 @@
 class TicketsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
   before_action :find_train, only: [:new, :create]
 
   def index
-    @tickets = Ticket.all
+    @tickets = current_user.tickets
   end
 
   def new
@@ -14,12 +15,18 @@ class TicketsController < ApplicationController
   def create
     @ticket = @train.tickets.new(ticket_params)
     @ticket.route_id = @train.route_id
-    @ticket.user_id = 1
+    @ticket.user_id = current_user.id
     if @ticket.save
       redirect_to tickets_path, notice: 'Білет створено.'
     else
       redirect_to search_index_path
     end
+  end
+
+  def destroy
+    @ticket = Ticket.find(params[:id])
+    @ticket.destroy
+    redirect_to tickets_url, notice: 'Ticket was successfully destroyed.'
   end
 
   private

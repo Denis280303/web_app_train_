@@ -1,0 +1,40 @@
+<h1>Змінити білет</h1>
+
+<%= form_for [:admin, @ticket] do |f| %>
+  <% if @ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(train.errors.count, "error") %> prohibited this train from being saved:</h2>
+
+      <ul>
+        <% train.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_first_name, "Ім'я:" %><br>
+    <%= f.text_field :user_first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_last_name, "Прізвище:" %><br>
+    <%= f.text_field :user_last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_fathers_name, 'По-батькові:' %><br>
+    <%= f.text_field :user_fathers_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_passport, 'Паспортні дані:' %><br>
+    <%= f.text_field :user_passport %>
+  </div>
+
+  <div class="field">
+    <%= f.submit 'Змінити білет' %><br>
+  </div>
+
+<% end %> 

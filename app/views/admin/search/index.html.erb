@@ -1,10 +1,7 @@
-<% if current_user.first_name? %>
-  <h1>Привіт, <%= current_user.first_name %></h1>
-<% end %>
 <h1>Пошук білета</h1>
 
 <div>
-  <%= form_tag search_path(@stations) do %>
+  <%= form_tag admin_search_path(@stations) do %>
       <div>
         <p>Початкова станція</p>
         <%= select_tag :start_station_id, options_from_collection_for_select(@stations, :id, :title) %>
@@ -20,4 +17,3 @@
 </div>
 
 <%= link_to 'На головну сторінку', root_path %> 
-<%= link_to 'Всі куплені білети', tickets_path %> 
