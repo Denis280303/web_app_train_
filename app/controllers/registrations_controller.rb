@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# RegistrationController
 class RegistrationsController < Devise::RegistrationsController
   private
 

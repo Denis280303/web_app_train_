@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: wagons
@@ -15,5 +17,5 @@
 #  type             :string
 #
 class EconomWagon < Wagon
-	validates :econom_seats, presence: true
+  validates :econom_seats, presence: true
 end

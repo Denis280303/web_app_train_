@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# SessionsController
 class SessionsController < Devise::SessionsController
   def create
     super do |resource|

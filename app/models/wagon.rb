@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: wagons
@@ -16,19 +18,19 @@
 #
 class Wagon < ActiveRecord::Base
   belongs_to :current_train, class_name: 'Train', foreign_key: :current_train_id
-  TYPES = %w(CoupeWagon CVWagon EconomWagon SeatWagon)
+  TYPES = %w[CoupeWagon CVWagon EconomWagon SeatWagon].freeze
 
   validates :current_train, :number_wag, :type, presence: true
   validates :number_wag, uniqueness: { scope: :current_train_id }
 
   before_validation :add_number_wag
 
-  scope :order_all_wagons,-> (train) { order("number_wag #{train.order_wagon ? 'ASC' : 'DESC' }") }
+  scope :order_all_wagons, ->(train) { order("number_wag #{train.order_wagon ? 'ASC' : 'DESC'}") }
 
   protected
 
   def add_number_wag
-    self.number_wag ||= self.max_number_wag + 1
+    self.number_wag ||= max_number_wag + 1
   end
 
   def max_number_wag

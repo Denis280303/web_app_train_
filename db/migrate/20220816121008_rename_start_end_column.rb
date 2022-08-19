@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# RenamesStartEndColumn
 class RenameStartEndColumn < ActiveRecord::Migration[6.1]
   def change
     remove_column :tickets, :last_station
