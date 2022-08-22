@@ -1,0 +1,20 @@
+<p><strong>МАРШРУТИ</strong></p>
+
+<ul>
+  <% @routes.each do |route| %>
+    <li>
+      <strong>Маршрут <%= route.id %></strong>
+      <p>Час прибуття <%= @end_station.arrival_time(route) %></p>
+      <p>Час відправлення <%= @start_station.departure_time(route) %></p>
+      <h3>Потяги</h3>
+      <ul>
+        <% route.trains.each do |train| %>
+          <li>
+            <p><%= train.number %></p>
+            <p><%= link_to 'Купити білет', new_admin_train_ticket_path(train, start_station_id: @start_station.id, end_station_id: @end_station.id)%></p>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>

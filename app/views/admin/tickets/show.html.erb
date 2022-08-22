@@ -1,0 +1,23 @@
+<table>
+  <thead>
+  <tr>
+    <th width="80px">ID Квитка</th>
+    <th width="80px">ID Користувача</th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= render @ticket %>
+  <tr>
+    <th width="70px">Ім'я користувача</th>
+    <th width="70px">По-батькові</th>
+    <th width="70px">Прізвище</th>
+    <th width="70px">Паспорт</th>
+  </tr>
+  <tr>
+    <td><%= @ticket.user_first_name %></td>
+    <td><%= @ticket.user_fathers_name %></td>
+    <td><%= @ticket.user_last_name %></td>
+    <td><%= @ticket.user_passport %></td>
+  </tr>
+  </tbody>
+</table>

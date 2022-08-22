@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# AddStations
 class AddStationsToTicket < ActiveRecord::Migration[6.1]
   def change
     add_column :tickets, :base_station, :text

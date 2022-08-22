@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# AddUser
 class AddUserToTicket < ActiveRecord::Migration[6.1]
   def change
     add_column :tickets, :user_first_name, :text

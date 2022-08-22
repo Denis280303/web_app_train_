@@ -1,6 +1,11 @@
-<h1>Привіт, це Денис!</h1>
+<% if current_user.first_name? %>
+  <h1>Привіт, <%= current_user.first_name %></h1>
+<% else %>
+  <h1>Привіт, адмін</h1>
+<% end %>
+<h4>режим адміністратора</h4>
 
-<%= link_to "Список станцій", railway_stations_path %>
-<%= link_to "Список потягів", trains_path %>
-<%= link_to "Список маршрутів", routes_path %>
-<%= link_to "Пошук", search_index_path %>
+<%= link_to "Список станцій", admin_railway_stations_path %>
+<%= link_to "Список потягів", admin_trains_path %>
+<%= link_to "Список маршрутів", admin_routes_path %>
+<%= link_to "Білети", admin_tickets_path %>

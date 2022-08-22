@@ -1,0 +1,19 @@
+<h1>Пошук білета</h1>
+
+<div>
+  <%= form_tag admin_search_path(@stations) do %>
+      <div>
+        <p>Початкова станція</p>
+        <%= select_tag :start_station_id, options_from_collection_for_select(@stations, :id, :title) %>
+      </div>
+      <div>
+        <p>Кінцева станція</p>
+        <%= select_tag :end_station_id, options_from_collection_for_select(@stations, :id, :title) %>
+      </div>
+      <div>
+        <p><%= submit_tag "Search" %></p>
+      </div>
+  <% end %>
+</div>
+
+<%= link_to 'На головну сторінку', root_path %> 
