@@ -1,6 +1,6 @@
-<tr>
-  <td><%= link_to ticket.id, admin_ticket_path(ticket) %></td>
-  <td><%= ticket.user_id %></td>
-  <td><%= link_to 'Delete', admin_ticket_path(ticket), method: :delete %></td>
-  <td><%= link_to 'Edit', edit_admin_ticket_path(ticket) %></td>
-</tr> 
+<div class="row">
+  <div class="col-md-3" align="center"><%= link_to ticket.id, admin_ticket_path(ticket) %></div>
+  <div class="col-md-3" align="center"><%= ticket.user_id %></div>
+  <div class="btn btn-primary"><%= link_to t('common.delete'), admin_ticket_path(ticket), method: :delete %></div>
+  <div class="btn btn-primary"><%= link_to t('common.edit'), edit_admin_ticket_path(ticket) %></div>
+</div> 

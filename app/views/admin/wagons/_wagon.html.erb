@@ -1,6 +1,6 @@
 <tr>
   <td><%= wagon.type %></td>
-  <td><%= link_to 'Показати', admin_wagon_path(wagon) %></td>
-  <td><%= link_to 'Змінити', edit_admin_wagon_path(wagon) %></td>
-  <td><%= link_to 'Видалити', admin_wagon_path(wagon), method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
+  <td><%= link_to t('common.show'), admin_wagon_path(wagon) %></td>
+  <td><%= link_to t('common.edit'), edit_admin_wagon_path(wagon) %></td>
+  <td><%= link_to t('common.delete'), admin_wagon_path(wagon), method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
 </tr>

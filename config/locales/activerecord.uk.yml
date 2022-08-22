@@ -1,0 +1,17 @@
+uk:
+  activerecord:
+    models:
+      railway_station: 'Станція'
+      train: 'Потяг'
+      route: 'Маршрут'
+      ticket: 'Квиток'
+      user: 'Користувач'
+      wagon: 'Вагон'
+      econom_wagon: 'Плацкарт'
+      coupe_wagon: 'Купе'
+      cv_wagon: 'СВ'
+      seat_wagon: 'Сидячий'
+    errors:
+      messages: 
+        blank: 'Не може бути порожнім'
+  

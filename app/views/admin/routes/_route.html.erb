@@ -1,6 +1,6 @@
 <tr>
   <td><%= route.title %></td>
-  <td><%= link_to 'Показати', admin_route_path(route) %></td>
-  <td><%= link_to 'Редагувати', edit_admin_route_path(route) %></td>
-  <td><%= link_to 'Видалити', admin_route_path(route), method: :delete, data: { confirm: 'Справді видалити?' } %></td>
+  <td><%= link_to t('common.show'), admin_route_path(route) %></td>
+  <td><%= link_to t('common.edit'), edit_admin_route_path(route) %></td>
+  <td><%= link_to t('common.delete'), admin_route_path(route), method: :delete, data: { confirm: 'Справді видалити?' } %></td>
 </tr>
