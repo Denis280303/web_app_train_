@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :tickets, only: %i[index destroy]
+  resources :tickets, only: %i[index destroy show]
 
   namespace :admin do
     resources :trains do
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   resources :trains, only: [] do
     resources :wagons, shallow: true
-    resources :tickets, only: %i[new create destroy]
+    resources :tickets, only: %i[new create destroy show index]
   end
 
   resources :railway_stations, only: [:index]

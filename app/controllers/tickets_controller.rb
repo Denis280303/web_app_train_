@@ -2,7 +2,7 @@
 
 # TicketsController
 class TicketsController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:create, :index]
   before_action :find_train, only: %i[new create]
 
   def index
@@ -24,6 +24,12 @@ class TicketsController < ApplicationController
     else
       redirect_to search_index_path
     end
+  end
+
+  def show
+    @ticket = Ticket.find(params[:id])
+    @currently_user = User.find(@ticket.user_id)
+    @ticket = @currently_user.tickets.find(params[:id])
   end
 
   def destroy
