@@ -14,9 +14,9 @@
     <% @railway_stations.each do |railway_station| %>
       <tr>
         <td><%= railway_station.title %></td>
-        <td><%= link_to 'Показати', admin_railway_station_path(railway_station) %></td>
-        <td><%= link_to 'Змінити', edit_admin_railway_station_path(railway_station) %></td>
-        <td><%= link_to 'Видалити', admin_railway_station_path(railway_station), method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
+        <td><%= link_to t('common.show'), admin_railway_station_path(railway_station) %></td>
+        <td><%= link_to t('common.edit'), edit_admin_railway_station_path(railway_station) %></td>
+        <td><%= link_to t('common.delete'), admin_railway_station_path(railway_station), method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,4 +25,4 @@
 <br>
 
 <%= link_to 'Нова станція', new_admin_railway_station_path %>
-<%= link_to 'Назад', root_path %>
+<%= link_to t('common.back'), wellcome_index_path %>

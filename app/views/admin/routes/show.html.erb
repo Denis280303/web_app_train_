@@ -36,7 +36,7 @@
           <%= form_tag update_position_admin_railway_station_path(station), method: :patch do %>
             <%= number_field_tag :position, station.position_in(@route)%>
             <%= hidden_field_tag :route_id, @route.id %>
-            <%= submit_tag "Змінити" %>
+            <%= submit_tag("Змінити") %>
           <% end %>
         </td>
         <td>
@@ -55,5 +55,5 @@
 <% end %>
 
 
-<%= link_to 'Змінити', edit_admin_route_path(@route) %> |
-<%= link_to 'Повернутись', admin_routes_path %>
+<%= link_to t('common.edit'), edit_admin_route_path(@route) %> |
+<%= link_to t('common.back'), admin_routes_path %>

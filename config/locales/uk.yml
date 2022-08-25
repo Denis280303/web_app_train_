@@ -1,0 +1,21 @@
+uk:
+  common:
+    back: 'Повернутись'
+    show: 'Показати'
+    edit: 'Змінити'
+    delete: 'Видалити'
+    errors: 'Помилка  при заповненні форми'
+  admin:
+    railway_stations:
+      new:
+        title: 'Нова станція'
+      edit:
+        title: 'Змінити станцію'
+      form:
+        submit: '%{action} станцію'
+    routes:
+      edit:
+        submit: 'Змінити маршрут'
+        title: 'Зміна маршруту'
+      new:
+        title: 'Додати новий маршрут'

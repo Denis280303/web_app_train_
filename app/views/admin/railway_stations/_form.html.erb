@@ -1,7 +1,7 @@
 <%= form_for [:admin, @railway_station] do |f| %>
   <% if railway_station.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@railway_station.errors.count, "error") %> prohibited this railway_station from being saved:</h2>
+      <h2><%= t('common.errors') %></h2>
 
       <ul>
         <% @railway_station.errors.each do |error| %>
@@ -17,6 +17,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t('.submit', action: @railway_station.new_record? ? 'Cтворити' : 'Змінити') %>
   </div>
 <% end %>

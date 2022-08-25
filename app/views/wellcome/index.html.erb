@@ -1,11 +1,12 @@
 <% if current_user.first_name? %>
   <h1>Привіт, <%= current_user.first_name %></h1>
 <% else %>
-  <h1>Привіт, адмін</h1>
+  <h1 align="center">Привіт, адмін</h1>
 <% end %>
-<h4>режим адміністратора</h4>
 
-<%= link_to "Список станцій", admin_railway_stations_path %>
-<%= link_to "Список потягів", admin_trains_path %>
-<%= link_to "Список маршрутів", admin_routes_path %>
-<%= link_to "Білети", admin_tickets_path %>
+<div class="row">
+<div class="nav nav-pills"><h3><%= link_to "Список станцій", admin_railway_stations_path %></h3></div>
+<div class="nav nav-pills"><h3><%= link_to "Список потягів", admin_trains_path %></h3></div>
+<div class="nav nav-pills"><h3><%= link_to "Список маршрутів", admin_routes_path %></h3></div>
+<div class="nav nav-pills"><h3><%= link_to "Білети", admin_tickets_path %></h3></div>
+</div>
