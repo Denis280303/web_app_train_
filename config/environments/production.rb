@@ -119,7 +119,7 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-  config.active_mailer.default_url_options = { host: "rocky-retreat-68446.herokuapp.com"}
+  config.action_mailer.default_url_options = { host: "rocky-retreat-68446.herokuapp.com"}
   config.action_mailer.smtp_settings = {
     :address   => "smtp.sendgrid.net",
     :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
