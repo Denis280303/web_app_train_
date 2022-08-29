@@ -10,6 +10,10 @@ Rails.application.routes.draw do
       resources :wagons, shallow: true
     end
 
+    resources :trains do
+      patch :update_number
+    end
+
     resources :tickets, only: %i[show destroy index edit update]
 
     resources :railway_stations do

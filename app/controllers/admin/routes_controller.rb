@@ -62,6 +62,6 @@ module Admin
 
     def route_title_params
       params.require(:route).permit(:title)
-  end
+    end
   end
 end
