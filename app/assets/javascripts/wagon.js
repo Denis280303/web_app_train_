@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function () {
+$(document).ready(function(){
   $('.seats').hide();
   show_wagon_attr($('#wagon_type').val());
   
@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', function () {
     switch (type) {
       case 'CoupeWagon':
         $('.high_seats').show();
-        $('.low_seats').hide();
+        $('.low_seats').show();
         break;
       case 'CVWagon':
         $('.low_seats').show();
