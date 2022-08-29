@@ -46,7 +46,7 @@ module Admin
     end
 
     def update_number
-      @train = Train.find(params[:id])
+      @train = Train.find(params[:train_id])
       if @train.update(train_number_params)
         redirect_to admin_trains_url, notice: 'Train was successfully update.'
       else
