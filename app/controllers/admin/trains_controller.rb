@@ -78,4 +78,5 @@ module Admin
     def train_number_params
       params.require(:train).permit(:number)
     end
+  end
 end
