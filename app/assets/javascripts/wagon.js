@@ -11,17 +11,17 @@ $(document).on('turbolinks:load', function () {
     function show_wagon_attr(type) {
         switch (type) {
             case 'CoupeWagon':
-                $('.top_seats').show();
-                $('.bottom_seats').show();
+                $('.high_seats').show();
+                $('.low_seats').show();
                 break;
             case 'CVWagon':
-                $('.bottom_seats').show();
+                $('.low_seats').show();
                 break;
             case 'EconomWagon':
-                $('.top_seats').show();
-                $('.bottom_seats').show();
-                $('.side_top_seats').show();
-                $('.side_bottom_seats').show();
+                $('.high_seats').show();
+                $('.low_seats').show();
+                $('.side_high_seats').show();
+                $('.side_low_seats').show();
                 break;
             case 'SeatWagon':
                 $('.econom_seats').show();
