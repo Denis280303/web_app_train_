@@ -16,9 +16,9 @@ Rails.application.routes.draw do
       patch :update_time, on: :member
       patch :update_position, on: :member
     end
-    
+
     resources :routes do 
-      patch: update_title
+      patch :update_title
     end
   end
 
