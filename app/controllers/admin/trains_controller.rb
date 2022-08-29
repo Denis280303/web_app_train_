@@ -51,6 +51,7 @@ module Admin
         redirect_to admin_trains_path, notice: 'Train was successfully update.'
       else
         render :edit
+      end
     end
 
     # DELETE /trains/1 or /trains/1.json
@@ -76,5 +77,5 @@ module Admin
 
     def train_number_params
       params.require(:train).permit(:number)
-  end
+    end
 end

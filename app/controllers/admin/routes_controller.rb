@@ -42,8 +42,8 @@ module Admin
         redirect_to admin_routes_path, notice: 'Route was successfully update.'
       else
         render :edit
+      end
     end
-  end
 
     def destroy
       @route.destroy
