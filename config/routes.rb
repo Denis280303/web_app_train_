@@ -16,7 +16,10 @@ Rails.application.routes.draw do
       patch :update_time, on: :member
       patch :update_position, on: :member
     end
-    resources :routes
+    
+    resources :routes do 
+      patch: update_title
+    end
   end
 
   resources :trains, only: [] do
