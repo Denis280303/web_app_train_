@@ -2,5 +2,5 @@
 
 <%= render 'form', train: @train %>
 
-<%= link_to 'Показати', admin_train_path(@train) %> |
-<%= link_to t('common.back'), admin_trains_path %>
+<%= link_to 'Показати', admin_train_path(@train), class: "buttonItem" %> |
+<%= link_to t('common.back'), admin_trains_path, class: "buttonItem" %>

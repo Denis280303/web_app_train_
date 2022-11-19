@@ -1,0 +1,58 @@
+<div class="jobBack"></div>
+<div class="section-inner">
+  <div class="section-job-search">
+    <h1 class="textHead">Пошук білета на екскурсію</h1>
+      <%= form_tag search_path(@stations) do %>
+        <div class="section-job-search-start">
+          <div class="form-group">
+          <div class="dropdown">
+            <p class="textMid">Початкова локація</p>
+            <%= select_tag :start_station_id, options_from_collection_for_select(@stations, :id, :title), class:"form-group dropdown dropdown__list-item" %>
+          </div>
+          <div class="dropdown">
+            <p class="textMid">Кінцева локація</p>
+            <%= select_tag :end_station_id, options_from_collection_for_select(@stations, :id, :title), class:"form-group dropdown dropdown__list-item" %>
+          </div>
+        </div>
+        <div class="section-header-in section-inner">
+            <%= button_to "Шукати", search_path(:start_station_id,:end_station_id), class: "buttonNav" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="section-job-img">
+          <%= image_tag('first.png', class: "images") %>
+  </div>
+</div>
+    <section class="section-outer section-content">
+        <div class="section-inner">
+            <div class="section-content-img"><%= image_tag('imgContent.jpg', id: "img22") %></div>
+            <div class="section-content-text">
+                <p class="section-content-text-1">Кращі поїздки в світі</p>
+                <p class="section-content-text-2">Ми завжди в топі</p>
+                <p class="section-content-text-3">Швидкість - наша 2 назва </p>
+                <p class="section-content-text-4">Замовляй білети</p>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- &Контентна частина кінець -->
+
+    <!-- &Ілюстрація подорожей -->
+    <section class="section-outer section-ilustrator">
+        <div class="ilustratorBack"></div>
+        <div class="section-inner">
+            <div class="section-ilustrator-head">
+                <%= image_tag('photoiLs.jpg', class: "images", id: "img1") %>
+            </div>
+            <div class="section-ilustrator-group">
+                <div class="section-ilustrator-group-first">
+                    <%= image_tag('photoiLs2.jpg', class: "images", id: "img2") %>
+                </div>
+                <div class="section-ilustrator-group-second">
+                    <%= image_tag('photoiLs3.jpg', class: "images", id: "img3") %>
+                </div>
+            </div>
+        </div>
+    </section>

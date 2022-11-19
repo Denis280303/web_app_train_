@@ -3,10 +3,11 @@
 <% else %>
   <h1 align="center">Привіт, адмін</h1>
 <% end %>
-
+<hr>
 <div class="row">
-<div class="nav nav-pills"><h3><%= link_to "Список станцій", admin_railway_stations_path %></h3></div>
-<div class="nav nav-pills"><h3><%= link_to "Список потягів", admin_trains_path %></h3></div>
-<div class="nav nav-pills"><h3><%= link_to "Список маршрутів", admin_routes_path %></h3></div>
-<div class="nav nav-pills"><h3><%= link_to "Білети", admin_tickets_path %></h3></div>
+<div class="nav nav-pills"><h2><%= link_to "Список локацій", admin_railway_stations_path, class: "buttonAdmin" %></h3></div>
+<div class="nav nav-pills"><h2><%= link_to "Список потягів", admin_trains_path, class: "buttonAdmin" %></h3></div>
+<div class="nav nav-pills"><h2><%= link_to "Список маршрутів", admin_routes_path, class: "buttonAdmin" %></h3></div>
+<hr>
+<div class="nav nav-pills"><h2><%= link_to "Всі білети", admin_tickets_path, class: "buttonAdmin" %></h3></div>
 </div>

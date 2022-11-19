@@ -12,8 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
+    <%= f.label :title, 'Назва локації' %>
     <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price, 'Ціна екскурсії на локації' %>
+    <%= f.number_field :price %>
   </div>
 
   <div class="actions">

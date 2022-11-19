@@ -29,6 +29,12 @@ class Route < ActiveRecord::Base
     railway_stations.last
   end
 
+  def total_price
+    total = 0
+    railway_stations.each { |pr|  total += pr.price if pr.price != nil }
+    return total
+  end
+
   def self.searched_routes(start_station, end_station)
     Route.find_station(start_station) & Route.find_station(end_station)
   end

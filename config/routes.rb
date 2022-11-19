@@ -3,6 +3,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  resources :lending, only: [:index, :show]
+
   resources :tickets, only: %i[index destroy show]
 
   namespace :admin do
@@ -38,7 +40,7 @@ Rails.application.routes.draw do
     post '/', to: 'search#search'
   end
 
-  root 'search#index'
+  root 'lending#index'
   get 'wellcome/index'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

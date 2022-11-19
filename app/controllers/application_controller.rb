@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     if request.referer == sign_in_url && resource.admin?
       wellcome_index_path
     else
-      stored_location_for(resource) || request.referer || root_path
+      search_index_path
     end
   end
 end

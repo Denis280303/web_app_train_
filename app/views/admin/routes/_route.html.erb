@@ -2,7 +2,7 @@
   <td><div id="route_title_<%=route.id%>"><%= route.title %></div>
     <%= render 'inline_form', route: route, hidden: true %>
   </td>
-  <td><%= link_to t('common.show'), admin_route_path(route) %></td>
-  <td><%= link_to t('common.edit'), '', class: 'edit_route', data: { route_id: route.id } %></td>
-  <td><%= link_to t('common.delete'), admin_route_path(route), method: :delete, data: { confirm: 'Справді видалити?' } %></td>
+  <td><%= link_to t('common.show'), admin_route_path(route), class: "buttonItem" %></td>
+  <td><%= link_to t('common.edit'), '', class: 'edit_route', data: { route_id: route.id }, class: "buttonItem" %></td>
+  <td><%= link_to t('common.delete'), admin_route_path(route), class: "buttonItem", method: :delete, data: { confirm: 'Справді видалити?' }%></td>
 </tr>

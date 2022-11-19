@@ -3,7 +3,8 @@
 <ul class="nav nav-list">
   <% @routes.each do |route| %>
     <li>
-      <strong>Маршрут <%= route.id %></strong>
+      <strong>Маршрут: <%= route.title %></strong>
+      <p><strong>Ціна маршруту: <%= route.total_price %> грн.</strong></p>
       <p>Час прибуття <%= @end_station.arrival_time(route) %></p>
       <p>Час відправлення <%= @start_station.departure_time(route) %></p>
       <h5><strong>Потяги</strong></h5>
@@ -11,7 +12,7 @@
         <% route.trains.each do |train| %>
           <li>
             <p>№<%= train.number %></p>
-            <div class="btn btn-primary" ><p><%= link_to 'Купити білет', new_train_ticket_path(train, start_station_id: @start_station.id, end_station_id: @end_station.id)%></p></div>
+            <div class="btn btn-primary" ><p><%= link_to 'Купити білет', new_train_ticket_path(train, start_station_id: @start_station.id, end_station_id: @end_station.id), class: "buttonItem"%></p></div>
           </li>
         <% end %>
       </ul>

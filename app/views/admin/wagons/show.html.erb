@@ -30,6 +30,6 @@
   <p>Сидячих місць:<%= @wagon.econom_seats %></p>
 <% end %>
 
-<%= link_to t('common.edit'), edit_admin_wagon_path(@wagon) %> 
-<%= link_to t('common.delete'), admin_wagon_path(@wagon), method: :delete, data: { confirm: 'Ви впевнені?' } %> 
-<%= link_to t('common.back'), admin_train_path(@wagon.current_train) %> 
+<%= link_to t('common.edit'), edit_admin_wagon_path(@wagon), class: "buttonItem" %> 
+<%= link_to t('common.delete'), admin_wagon_path(@wagon), method: :delete, data: { confirm: 'Ви впевнені?' } , class: "buttonItem"%> 
+<%= link_to t('common.back'), admin_train_path(@wagon.current_train), class: "buttonItem" %> 

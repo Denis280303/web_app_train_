@@ -11,7 +11,7 @@
         <% route.trains.each do |train| %>
           <li>
             <p><%= train.number %></p>
-            <p><%= link_to 'Купити білет', new_admin_train_ticket_path(train, start_station_id: @start_station.id, end_station_id: @end_station.id)%></p>
+            <p><%= link_to 'Купити білет', new_admin_train_ticket_path(train, start_station_id: @start_station.id, end_station_id: @end_station.id), class: "buttonItem"%></p>
           </li>
         <% end %>
       </ul>
