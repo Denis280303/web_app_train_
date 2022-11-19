@@ -117,6 +117,7 @@ GEM
       sprockets (>= 2)
     letter_opener (1.8.1)
       launchy (>= 2.2, < 3)
+    libv8 (3.16.14.19)
     libv8 (3.16.14.19-x86_64-linux)
     listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -130,15 +131,20 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.0)
     minitest (5.16.2)
     msgpack (1.5.4)
     nio4r (2.5.8)
+    nokogiri (1.13.8)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     nokogiri (1.13.8-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.22.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
+    pg (1.4.3)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -175,6 +181,11 @@ GEM
       loofah (~> 2.3)
     rails-ujs (0.1.0)
       railties (>= 3.1)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (6.1.6.1)
       actionpack (= 6.1.6.1)
       activesupport (= 6.1.6.1)
@@ -237,7 +248,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.4)
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
@@ -279,6 +289,7 @@ GEM
     zeitwerk (2.6.0)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
@@ -291,17 +302,18 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   listen (~> 3.3)
+  pg (~> 1.4)
   pry (~> 0.14.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.5, >= 6.1.5.1)
   rails-ujs
+  rails_12factor
   rubocop-performance (~> 1.14)
   rubocop-rails (~> 2.15)
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
   spring
-  sqlite3 (~> 1.4)
   therubyracer
   turbolinks (~> 5)
   twitter-bootstrap-rails
@@ -311,7 +323,7 @@ DEPENDENCIES
   webpacker (~> 5.0)
 
 RUBY VERSION
-   ruby 2.7.5p203
+   ruby 3.0.4p208
 
 BUNDLED WITH
    2.3.19

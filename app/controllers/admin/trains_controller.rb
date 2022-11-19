@@ -45,6 +45,15 @@ module Admin
       end
     end
 
+    def update_number
+      @train = Train.find(params[:train_id])
+      if @train.update(train_number_params)
+        redirect_to admin_trains_url, notice: 'Train was successfully update.'
+      else
+        render :edit
+      end
+    end
+
     # DELETE /trains/1 or /trains/1.json
     def destroy
       @train.destroy
@@ -64,6 +73,10 @@ module Admin
     # Only allow a list of trusted parameters through.
     def train_params
       params.require(:train).permit(:number, :current_station_id, :route_id, :order_wagon)
+    end
+
+    def train_number_params
+      params.require(:train).permit(:number)
     end
   end
 end

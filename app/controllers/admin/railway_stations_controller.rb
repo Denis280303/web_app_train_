@@ -31,7 +31,7 @@ module Admin
       respond_to do |format|
         if @railway_station.save
           format.html do
- redirect_to admin_railway_station_url(@railway_station), notice: 'Railway station was created.' end
+ redirect_to admin_railway_station_url(@railway_station), notice: 'Локацію успішно створено.' end
           format.json { render :show, status: :created, location: @railway_station }
         else
           format.html { render :new, status: :unprocessable_entity }
@@ -45,7 +45,7 @@ module Admin
       respond_to do |format|
         if @railway_station.update(railway_station_params)
           format.html do
- redirect_to admin_railway_station_url(@railway_station), notice: 'Railway station was updated.' end
+ redirect_to admin_railway_station_url(@railway_station), notice: 'Локацію оновлено.' end
         else
           format.html { render :edit, status: :unprocessable_entity }
         end
@@ -69,7 +69,7 @@ module Admin
       @railway_station.destroy
 
       respond_to do |format|
-        format.html { redirect_to admin_railway_stations_url, notice: 'Railway station was destroyed.' }
+        format.html { redirect_to admin_railway_stations_url, notice: 'Локацію видалено.' }
         format.json { head :no_content }
       end
     end
@@ -83,7 +83,7 @@ module Admin
 
     # Only allow a list of trusted parameters through.
     def railway_station_params
-      params.require(:railway_station).permit(:title)
+      params.require(:railway_station).permit(:title, :price)
     end
   end
 end

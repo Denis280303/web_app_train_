@@ -1,26 +1,28 @@
-<h2>Вхід</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password, "Пароль" %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
+<div class="section-inner">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <h1>Вхід</h1>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me, "Запам'ятати мене" %>
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
+
+    <div class="field">
+      <%= f.label :password, "Пароль" %><br />
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, "Запам'ятати мене" %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit "Вхід", class: "buttonAdmin" %>
+    </div>
+    <%= render "devise/shared/links" %>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Вхід" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+</div>

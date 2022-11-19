@@ -36,6 +36,15 @@ module Admin
       end
     end
 
+    def update_title
+      @route = Route.find(params[:route_id])
+      if @route.update(route_title_params)
+        redirect_to admin_routes_path, notice: 'Route was successfully update.'
+      else
+        render :edit
+      end
+    end
+
     def destroy
       @route.destroy
       redirect_to admin_routes_path
@@ -49,6 +58,10 @@ module Admin
 
     def route_params
       params.require(:route).permit(:title, railway_station_ids: [])
+    end
+
+    def route_title_params
+      params.require(:route).permit(:title)
     end
   end
 end

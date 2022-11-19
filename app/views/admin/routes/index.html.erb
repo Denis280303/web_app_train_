@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Список маршрутів</h1>
 
 <table>
@@ -11,11 +9,11 @@
   </thead>
 
   <tbody>
-    <%= render @routes %>
+    <%= render @routes%>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'Новий маршрут', new_admin_route_path %>
-<%= link_to t('common.back'), wellcome_index_path %>
+<%= link_to 'Новий маршрут', new_admin_route_path, class: "buttonItem" %>
+<%= link_to t('common.back'), wellcome_index_path, class: "buttonItem" %>

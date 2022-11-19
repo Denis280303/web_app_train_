@@ -8,11 +8,11 @@ uk:
   admin:
     railway_stations:
       new:
-        title: 'Нова станція'
+        title: 'Нова локація'
       edit:
-        title: 'Змінити станцію'
+        title: 'Змінити локацію'
       form:
-        submit: '%{action} станцію'
+        submit: '%{action} локацію'
     routes:
       edit:
         submit: 'Змінити маршрут'

@@ -1,23 +1,30 @@
 <% if current_user.first_name? %>
   <h1>Привіт, <%= current_user.first_name %></h1>
 <% end %>
-<h1>Пошук білета</h1>
 
-<div>
-  <%= form_tag search_path(@stations) do %>
-      <div>
-        <p>Початкова станція</p>
-        <%= select_tag :start_station_id, options_from_collection_for_select(@stations, :id, :title) %>
-      </div>
-      <div>
-        <p>Кінцева станція</p>
-        <%= select_tag :end_station_id, options_from_collection_for_select(@stations, :id, :title) %>
-      </div>
-      <div class="btn ">
-        <p><%= submit_tag "Search" %></p>
-      </div>
-  <% end %>
+<div class="section-inner">
+  <div class="section-job-search">
+    <h1 class="textHead">Пошук білета на екскурсію</h1>
+      <%= form_tag search_path(@stations) do %>
+        <div class="section-job-search-start">
+          <div class="form-group">
+          <div class="dropdown">
+            <p class="textMid">Початкова локація</p>
+            <%= select_tag :start_station_id, options_from_collection_for_select(@stations, :id, :title), class:"form-group dropdown dropdown__list-item" %>
+          </div>
+          <div class="dropdown">
+            <p class="textMid">Кінцева локація</p>
+            <%= select_tag :end_station_id, options_from_collection_for_select(@stations, :id, :title), class:"form-group dropdown dropdown__list-item" %>
+          </div>
+        </div>
+        <div class="section-header-in section-inner">
+            <%= button_to "Шукати", search_path(:start_station_id,:end_station_id), class: "buttonNav" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="section-job-img">
+          <%= image_tag('first.png', class: "images") %>
+  </div>
 </div>
-
-<%= link_to 'На головну сторінку', root_path %> 
-<%= link_to 'Всі куплені білети', tickets_path %> 
+<br />
