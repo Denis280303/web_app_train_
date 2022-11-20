@@ -26,7 +26,7 @@
             <div class="section-inner">
                 <!-- !Вставляєм логотип -->
                 <div class="section-header-logo">
-                  <%= image_tag('CityT.svg', class: 'img-responsive img-rounded') %>
+                  <%= link_to image_tag('CityT.svg'), wellcome_index_path, class: 'img-responsive img-rounded'%>
                 </div>
                 <!-- !Прописуєм меню -->
                 <div class="section-header-nav">
@@ -38,7 +38,7 @@
                         </div>
                         <div class="menu2">
                             <a href="#">
-                                <li>Контакти</li>
+                                <li><%= link_to "Топ екскурсій", edit_lending_path(2) %></li>
                             </a>
                         </div>
                         <div class="menu3">
@@ -82,7 +82,7 @@
                                 <li>Інформація</li>
                             </a>
                             <a href="#">
-                                <li>Контакти</li>
+                                <li>Топ екскурсій</li>
                             </a>
                             <a href="#">
                                 <li>Телефон</li>

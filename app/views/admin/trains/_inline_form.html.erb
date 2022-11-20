@@ -1,9 +1,9 @@
 <%= form_for [:admin, train], url: admin_train_update_number_path(train), html: {method: :patch, style: "display: #{hidden ? 'none' : 'block'}"} do |f| %>
-    <div class="field">
+    <div class="field size">
       <%= f.text_field :number %>
     </div>
 
-    <div class="actions">
+    <div class="actions size">
       <%= f.submit %>
     </div>
 <% end %>

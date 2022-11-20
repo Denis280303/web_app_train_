@@ -1,4 +1,4 @@
-<h1><%= t('.title') %></h1>
+<h1 style="padding-left: 20px;"><%= t('.title') %></h1>
 
 <%= form_for [:admin, @route] do |form| %>
   <% if @route.errors.any? %>
@@ -13,20 +13,20 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field size">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="field size">
     <%= form.label :railway_station_ids, 'Станції' %>
     <%= form.collection_select :railway_station_ids, RailwayStation.all, :id, :title, {}, { multiple: true } %>
   </div>
 
-  <div class="actions">
+  <div class="actions size">
     <%= form.submit t('.submit') %>
   </div>
 <% end %>
 
-
-<%= link_to t('common.back'), admin_routes_path, class: "buttonItem" %>
+<hr>
+<%= link_to t('common.back'), admin_routes_path, class: "buttonItem size" %>

@@ -7,5 +7,6 @@
   <strong>Ціна:</strong>
   <%= @railway_station.price %>
 </p></h3>
-<%= link_to t('common.edit'), edit_admin_railway_station_path(@railway_station), class: "buttonItem" %> |
-<%= link_to t('common.back'), admin_railway_stations_path, class: "buttonItem" %>
+<%= link_to t('common.edit'), edit_admin_railway_station_path(@railway_station), class: "buttonItem size" %>
+<hr>
+<%= link_to t('common.back'), admin_railway_stations_path, class: "buttonItem size" %>

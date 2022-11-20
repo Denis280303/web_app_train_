@@ -901,6 +901,19 @@ body {
 .section-job-img {
   padding-left: 0px;
 }
+
+.planet{
+  animation: rotage 20s linear infinite;
+}
+@keyframes rotage{
+   from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
 .section-job-img img {
   position: relative;
   width: 800px;
@@ -1105,10 +1118,6 @@ body {
   margin-top: 50px;
 }
 
-
-
-
-
 .container {
   height: 100vh;
   width: 0vw;
@@ -1258,4 +1267,66 @@ body {
 }
 .container .icons img {
   width: 40px;
+}
+
+.size{
+  padding-left: 30px;
+  font-size: 140%;
+}
+
+.container .e0 {
+  background: url("k.jpg") center center no-repeat;
+  background-size: 300px;
+}
+.container .e0:hover {
+  background: url("k.jpg") left center no-repeat;
+  background-size: 600px;
+}
+.container .e0:hover h2 {
+  opacity: 1;
+}
+.container .e0:hover .fa {
+  opacity: 1;
+}
+.container .e1 {
+  background: url("l.jpg") center center no-repeat;
+  background-size: 300px;
+}
+.container .e1:hover {
+  background: url("l.jpg") left center no-repeat;
+  background-size: 600px;
+}
+.container .e1:hover h2 {
+  opacity: 1;
+}
+.container .e1:hover .fa {
+  opacity: 1;
+}
+.container .e2 {
+  background: url("ki.jpg") center center no-repeat;
+  background-size: 300px;
+}
+.container .e2:hover {
+  background: url("ki.jpg") left center no-repeat;
+  background-size: 600px;
+}
+.container .e2:hover h2 {
+  opacity: 1;
+}
+.container .e2:hover .fa {
+  opacity: 1;
+}
+.container .e3 {
+  background: url("o.jpg") center center no-repeat;
+  background-size: 300px;
+}
+.container .e3:hover {
+  background: url("o.jpg") left center no-repeat;
+  background-size: 600px;
+}
+.container .e3:hover h2 {
+  opacity: 1;
+}
+.container .e3:hover .fa {
+  opacity: 1;
 }

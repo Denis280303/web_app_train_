@@ -1,6 +1,6 @@
 <div class="row">
-  <td><div class="col-md-3" align="center"><%= link_to ticket.id, admin_ticket_path(ticket) %></div></td>
-  <td><div class="col-md-3" align="center"><%= ticket.user_id %></div></td>
-  <td><div class="btn btn-primary"><%= link_to t('common.delete'), admin_ticket_path(ticket),class: "buttonItem", method: :delete %></div></td>
-  <td><div class="btn btn-primary"><%= link_to t('common.edit'), edit_admin_ticket_path(ticket), class: "buttonItem" %></div></td>
+  <td><div class="col-md-3 size" align="center"><%= link_to ticket.id, admin_ticket_path(ticket) %></div></td>
+  <td><div class="col-md-3 size" align="center"><%= ticket.user_id %></div></td>
+  <td><div class="btn btn-primary"><%= link_to t('common.delete'), admin_ticket_path(ticket),class: "buttonItem size", method: :delete %></div></td>
+  <td><div class="btn btn-primary"><%= link_to t('common.edit'), edit_admin_ticket_path(ticket), class: "buttonItem size" %></div></td>
 </div>

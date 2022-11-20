@@ -3,20 +3,20 @@
   </thead>
   <tbody>
   <tr>
-    <th width="90px">ID Квитка</th>
-    <th width="90px">ID Користувача</th>
-    <th width="90px">Ім'я користувача</th>
-    <th width="90px">По-батькові</th>
-    <th width="90px">Прізвище</th>
-    <th width="90px">Паспорт</th>
+    <th width="90px" class="size">ID Квитка</th>
+    <th width="90px" class="size">ID Користувача</th>
+    <th width="90px" class="size">Ім'я користувача</th>
+    <th width="90px" class="size">По-батькові</th>
+    <th width="90px" class="size">Прізвище</th>
+    <th width="90px" class="size">Паспорт</th>
   </tr>
   <tr>
-    <td><div class="col-md-3" align="center"><%= @ticket.id %></div></td>
-    <td><div class="col-md-3" align="center"><%= @ticket.user_id %></div></td>
-    <td><%= @ticket.user_first_name %></td>
-    <td><%= @ticket.user_fathers_name %></td>
-    <td><%= @ticket.user_last_name %></td>
-    <td><%= @ticket.user_passport %></td>
+    <td><div class="col-md-3 size" align="center"><%= @ticket.id %></div></td>
+    <td><div class="col-md-3 size" align="center"><%= @ticket.user_id %></div></td>
+    <td class="size"><%= @ticket.user_first_name %></td>
+    <td class="size"><%= @ticket.user_fathers_name %></td>
+    <td class="size"><%= @ticket.user_last_name %></td>
+    <td class="size"><%= @ticket.user_passport %></td>
   </tr>
   </tbody>
 </table>

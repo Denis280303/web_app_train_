@@ -1,9 +1,9 @@
-<h1>Список маршрутів</h1>
+<h1 style="padding-left: 20px;">Список маршрутів</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Назва</th>
+      <th class="size">Назва</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,5 +15,6 @@
 
 <br>
 
-<%= link_to 'Новий маршрут', new_admin_route_path, class: "buttonItem" %>
-<%= link_to t('common.back'), wellcome_index_path, class: "buttonItem" %>
+<%= link_to 'Новий маршрут', new_admin_route_path, class: "buttonItem size" %>
+<hr>
+<%= link_to t('common.back'), wellcome_index_path, class: "buttonItem size" %>

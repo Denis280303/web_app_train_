@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field size">
     <%= f.label :title, 'Назва локації' %>
     <%= f.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="field size">
     <%= f.label :price, 'Ціна екскурсії на локації' %>
     <%= f.number_field :price %>
   </div>
 
-  <div class="actions">
+  <div class="actions size">
     <%= f.submit t('.submit', action: @railway_station.new_record? ? 'Cтворити' : 'Змінити') %>
   </div>
 <% end %>

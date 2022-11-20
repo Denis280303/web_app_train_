@@ -1,27 +1,27 @@
-<h1>Білети</h1>
+<h1 style="padding-left: 20px;">Білети</h1>
 
 <table>
   <thead>
   <tr>
-    <th width="60px">Білет id</th>
-    <th width="90px">Користувач id</th>
-    <th width="90px">Ім'я користувача</th>
-    <th width="90px">Прізвище користувача</th>
-    <th width="90px">По-батькові користувача</th>
-    <th width="50px">Паспорт</th>
+    <th width="60px" class="size">Білет id</th>
+    <th width="90px" class="size">Користувач id</th>
+    <th width="90px" class="size">Ім'я користувача</th>
+    <th width="90px" class="size">Прізвище користувача</th>
+    <th width="90px" class="size">По-батькові користувача</th>
+    <th width="50px" class="size">Паспорт</th>
   </tr>
   </thead>
 
   <tbody>
   <% @tickets.each do |ticket|%>
   <tr>
-    <td><%= ticket.id %></td>
-    <td><%= ticket.user_id %></td>
-    <td><%= ticket.user_first_name %></td>
-    <td><%= ticket.user_last_name %></td>
-    <td><%= ticket.user_fathers_name %></td>
-    <td><%= ticket.user_passport %></td>
-    <td><%= link_to 'Видалити', ticket_path(ticket), method: :delete, class: "buttonItem" %></td>
+    <td class="size"><%= ticket.id %></td>
+    <td class="size"><%= ticket.user_id %></td>
+    <td class="size"><%= ticket.user_first_name %></td>
+    <td class="size"><%= ticket.user_last_name %></td>
+    <td class="size"><%= ticket.user_fathers_name %></td>
+    <td class="size"><%= ticket.user_passport %></td>
+    <td><%= link_to 'Видалити', ticket_path(ticket), method: :delete, class: "buttonItem size" %></td>
   </tr> 
   <% end %>
   </tbody>
@@ -30,5 +30,6 @@
 
 <br>
 
-<%= link_to 'Шукати далі', search_index_path, class: "buttonItem" %> 
-<%= link_to 'На головну сторінку', root_path, class: "buttonItem" %> 
+<%= link_to 'Шукати далі', search_index_path, class: "buttonItem size" %> 
+<hr>
+<%= link_to 'На головну сторінку', root_path, class: "buttonItem size" %> 

@@ -1,9 +1,9 @@
-<h1>Потяги</h1>
+<h1 style="padding-left: 20px;">Потяги</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Номер</th>
+      <th class="size">Номер</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,5 +15,6 @@
 
 <br>
 
-<%= link_to 'Новий потяг', new_admin_train_path, class: "buttonItem" %>
-<%= link_to t('common.back'), wellcome_index_path, class: "buttonItem" %>
+<%= link_to 'Новий потяг', new_admin_train_path, class: "buttonItem size" %>
+<hr>
+<%= link_to t('common.back'), wellcome_index_path, class: "buttonItem size" %>

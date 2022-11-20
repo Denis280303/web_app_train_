@@ -1,35 +1,36 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Тип вагона:</strong>
+  <strong class="size">Тип вагона:</strong>
   <%= @wagon.type %>
 </p>
 
 <p>
-  <strong>Номер вагона:</strong>
+  <strong class="size">Номер вагона:</strong>
   <%= @wagon.number_wag %>
 </p>
 
 <% if @wagon.high_seats %>
-  <p>Верхніх місць:<%= @wagon.high_seats %></p>
+  <p class="size">Верхніх місць:<%= @wagon.high_seats %></p>
 <% end %>
 
 <% if @wagon.low_seats %>
-  <p>Нижніх місць:<%= @wagon.low_seats %></p>
+  <p class="size"> Нижніх місць:<%= @wagon.low_seats %></p>
 <% end %>
 
 <% if @wagon.high_seats %>
-  <p>Верхніх бокових місць:<%= @wagon.side_high_seats %></p>
+  <p class="size">Верхніх бокових місць:<%= @wagon.side_high_seats %></p>
 <% end %>
 
 <% if @wagon.low_seats %>
-  <p>Нижніх бокових місць:<%= @wagon.side_low_seats %></p>
+  <p class="size">Нижніх бокових місць:<%= @wagon.side_low_seats %></p>
 <% end %>
 
 <% if @wagon.econom_seats %>
-  <p>Сидячих місць:<%= @wagon.econom_seats %></p>
+  <p class="size">Сидячих місць:<%= @wagon.econom_seats %></p>
 <% end %>
 
-<%= link_to t('common.edit'), edit_admin_wagon_path(@wagon), class: "buttonItem" %> 
-<%= link_to t('common.delete'), admin_wagon_path(@wagon), method: :delete, data: { confirm: 'Ви впевнені?' } , class: "buttonItem"%> 
-<%= link_to t('common.back'), admin_train_path(@wagon.current_train), class: "buttonItem" %> 
+<%= link_to t('common.edit'), edit_admin_wagon_path(@wagon), class: "buttonItem size" %> 
+<%= link_to t('common.delete'), admin_wagon_path(@wagon), method: :delete, data: { confirm: 'Ви впевнені?' } , class: "buttonItem size"%> 
+<hr>
+<%= link_to t('common.back'), admin_train_path(@wagon.current_train), class: "buttonItem size" %> 
