@@ -1,13 +1,9 @@
-<table>
-  <thead>
-    <tr>
-      <th><h4><strong class="size">Білета ID</strong></h4></th>
-      <th><h4><strong class="size">Користувача ID</strong></h4></th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <%= render @tickets %>
-  </tr>
-  </tbody>
-</table>
+<% @tickets.each do |ticket| %>
+    <div class="row">
+      <div class="size"><strong>ID Білета: </strong><%= link_to ticket.id, admin_ticket_path(ticket) %></div>
+      <div class="size"><strong>ID Користувача: </strong><%= ticket.user_id %></div>
+      <div class="btn btn-primary"><%= link_to t('common.delete'), admin_ticket_path(ticket),class: "buttonItem size", method: :delete %></div><br>
+      <div class="btn btn-primary"><%= link_to t('common.edit'), edit_admin_ticket_path(ticket), class: "buttonItem size" %></div>
+      <br>
+      <hr>
+    <% end %>
