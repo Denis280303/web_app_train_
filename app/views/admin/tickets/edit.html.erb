@@ -1,4 +1,4 @@
-<h1>Змінити білет</h1>
+<h1 style="padding-left: 20px;">Змінити білет</h1>
 
 <%= form_for [:admin, @ticket] do |f| %>
   <% if @ticket.errors.any? %>
@@ -13,27 +13,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field size">
     <%= f.label :user_first_name, "Ім'я:" %><br>
     <%= f.text_field :user_first_name %>
   </div>
 
-  <div class="field">
+  <div class="field size">
     <%= f.label :user_last_name, "Прізвище:" %><br>
     <%= f.text_field :user_last_name %>
   </div>
 
-  <div class="field">
+  <div class="field size">
     <%= f.label :user_fathers_name, 'По-батькові:' %><br>
     <%= f.text_field :user_fathers_name %>
   </div>
 
-  <div class="field">
+  <div class="field size">
     <%= f.label :user_passport, 'Паспортні дані:' %><br>
     <%= f.text_field :user_passport %>
   </div>
 
-  <div class="field">
+  <div class="field size">
     <%= f.submit 'Змінити білет' %><br>
   </div>
 

@@ -1,9 +1,9 @@
 <%= form_for [:admin, route], url: admin_route_update_title_path(route), html: {method: :patch, style: "display: #{hidden ? 'none' : 'block'}"} do |f| %>
-    <div class="field">
+    <div class="field size">
       <%= f.text_field :title %>
     </div>
 
-    <div class="actions">
+    <div class="actions size">
       <%= f.submit %>
     </div>
 <% end %>

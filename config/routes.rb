@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :lending, only: [:index, :show]
+  resources :lending, only: [:index, :show, :edit]
 
   resources :tickets, only: %i[index destroy show]
 

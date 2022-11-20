@@ -1,6 +1,6 @@
 <tr>
-  <td><%= wagon.type %></td>
-  <td><%= link_to t('common.show'), admin_wagon_path(wagon), class: "buttonItem" %></td>
-  <td><%= link_to t('common.edit'), edit_admin_wagon_path(wagon), class: "buttonItem" %></td>
-  <td><%= link_to t('common.delete'), admin_wagon_path(wagon), method: :delete, data: { confirm: 'Ви впевнені?' } , class: "buttonItem"%></td>
+  <td class="size"><%= wagon.type %></td>
+  <td><%= link_to t('common.show'), admin_wagon_path(wagon), class: "buttonItem size" %></td>
+  <td><%= link_to t('common.edit'), edit_admin_wagon_path(wagon), class: "buttonItem size" %></td>
+  <td><%= link_to t('common.delete'), admin_wagon_path(wagon), method: :delete, data: { confirm: 'Ви впевнені?' } , class: "buttonItem size"%></td>
 </tr>

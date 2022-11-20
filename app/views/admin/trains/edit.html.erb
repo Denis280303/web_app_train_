@@ -1,6 +1,7 @@
-<h1>Зміна потягу</h1>
+<h1 style="padding-left: 20px;">Зміна потягу</h1>
 
 <%= render 'form', train: @train %>
 
-<%= link_to 'Показати', admin_train_path(@train), class: "buttonItem" %> |
-<%= link_to t('common.back'), admin_trains_path, class: "buttonItem" %>
+<%= link_to 'Показати', admin_train_path(@train), class: "buttonItem size" %>
+<hr>
+<%= link_to t('common.back'), admin_trains_path, class: "buttonItem size" %>

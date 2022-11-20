@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field size">
       <%= form.label :order_wagon, 'З голови потяга' %>
       <%= form.select :order_wagon, [true, false] %>
   </div>
 
-  <div class="field">
+  <div class="field size">
     <%= form.label :number %>
     <%= form.text_field :number %>
   </div>
 
-  <div class="field">
+  <div class="field size">
     <%= form.label :route, 'Маршрут' %>
     <%= form.collection_select :route_id, Route.all, :id, :title %>
   </div>
 
-  <div class="field">
+  <div class="field size">
     <%= form.label :current_station, 'Поточна станція' %>
     <%= form.collection_select :current_station_id, RailwayStation.all, :id, :title %>
   </div>
 
-  <div class="actions">
+  <div class="actions size">
     <%= form.submit %>
   </div>
 <% end %>

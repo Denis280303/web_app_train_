@@ -1,32 +1,33 @@
 <p>
-  <strong>Номер:</strong>
+  <strong class="size">Номер:</strong>
   <%= @train.number %>
 </p>
 
 <% if @train.route.nil? %>
-  <p>Маршрут не призначений!</p>
+  <p class="size">Маршрут не призначений!</p>
 <% else %>
-  <p><strong>Маршрут потяга: </strong><%= @train.route.title %></p>
+  <p><strong class="size">Маршрут потяга: </strong><%= @train.route.title %></p>
   <% end %>
 
 <% if @train.wagons.count == 0 %>
-  <p>У потяга немає вагонів!</p>
+  <p class="size">У потяга немає вагонів!</p>
 <% else %>
-<strong>Вагони:</strong>
+<strong class="size">Вагони:</strong>
   <% if @train.order_wagon %>
-    <p><strong>Нумерація з голови</strong></p>
+    <p><strong class="size">Нумерація з голови</strong></p>
   <% else %>
-    <p><strong>Нумерація з хвоста</strong></p>
+    <p><strong class="size">Нумерація з хвоста</strong></p>
   <% end %>
 
   <% @train.wagons.order_all_wagons(@train).each do |wagon| %>
     <p><tr>
-      <td><strong><%= link_to "Номер вагона: #{wagon.number_wag}", admin_wagon_path(wagon) %></strong></td>
-      <td><strong><%= wagon.type %></strong></td>
+      <td><strong class="size"><%= link_to "Номер вагона: #{wagon.number_wag}", admin_wagon_path(wagon) %></strong></td>
+      <td><strong class="size"><%= wagon.type %></strong></td>
     </tr></p>
   <% end %>
 <% end %>
 
-<%= link_to 'Додати вагон', new_admin_train_wagon_path(@train), class: "buttonItem" %> |
-<%= link_to 'Змінити', edit_admin_train_path(@train), class: "buttonItem" %> |
-<%= link_to t('common.back'), admin_trains_path, class: "buttonItem" %>
+<%= link_to 'Додати вагон', new_admin_train_wagon_path(@train), class: "buttonItem size" %> |
+<%= link_to 'Змінити', edit_admin_train_path(@train), class: "buttonItem size" %>
+<hr>
+<%= link_to t('common.back'), admin_trains_path, class: "buttonItem size" %>

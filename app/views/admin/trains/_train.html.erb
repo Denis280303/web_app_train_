@@ -1,8 +1,8 @@
 <tr>
-  <td><div id="train_number_<%=train.id%>"><%= train.number %></div>
+  <td><div id="train_number_<%=train.id%>" class="size"><%= train.number %></div>
     <%= render 'inline_form', train: train, hidden: true %>
   </td>
-  <td><%= link_to t('common.show'), admin_train_path(train), class: "buttonItem" %></td>
-  <td><%= link_to t('common.edit'), '', class: 'edit_train', data: { train_id: train.id }, class: "buttonItem" %></td>
-  <td><%= link_to t('common.delete'), admin_train_path(train),class: "buttonItem", method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
+  <td><%= link_to t('common.show'), admin_train_path(train), class: "buttonItem size" %></td>
+  <td><%= link_to t('common.edit'), '', class: 'edit_train', data: { train_id: train.id }, class: "buttonItem size" %></td>
+  <td><%= link_to t('common.delete'), admin_train_path(train),class: "buttonItem size", method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
 </tr>
